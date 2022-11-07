@@ -21,7 +21,7 @@ fs.readdir(folder, { withFileTypes: true }, (err, files) => {
                         console.log(`Some error.`)
                     } else {
                         console.log(`${path.basename(newfile)} - ${path.extname(newfile.substring(file.name.split(".").pop()))} - ${stats.size/1024} kb`);
-                   }
+                    }
                })
             }
         }

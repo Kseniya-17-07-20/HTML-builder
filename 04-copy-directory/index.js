@@ -1,6 +1,6 @@
 const fs = require('fs');
-const path = require('path');
-//const { promises: fs } = require("fs");
+//const path = require('path');
+const { promises: fs } = require("fs");
 const folder = path.join(__dirname, 'files-copy');
 const readFrom = path.join(__dirname, 'files');
 
@@ -39,7 +39,6 @@ function clearDirectory() {
 }
 clearDirectory()
 copyDir()
-
 
 
 // const { promises: fs } = require("fs")
