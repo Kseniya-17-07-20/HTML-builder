@@ -1,9 +1,12 @@
 let fs = require('fs');
 let path = require('path');
-let readStream = fs.createReadStream(path.join(__dirname, '/text.txt'));
+const { Stream } = require('stream');
+let filepath = path.join(__dirname, '/text.txt'); // путь к файлу
+let readStream = fs.createReadStream(filepath, 'utf-8'); // создаем поток чтения
 let data = '';
-readStream.on('data', function(chunk) {
+readStream.on('data', chunk =>{
     data += chunk;
-}).on('end', function() {
-    console.log(data.toString());
+});
+readStream.on('end', function() {
+    console.log(data);
 });
